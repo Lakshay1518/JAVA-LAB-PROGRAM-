@@ -4,7 +4,7 @@ class WrongAgeException extends Exception {
     }
 }
 
-// Father class
+
 class Father {
     int age;
 
@@ -16,12 +16,12 @@ class Father {
     }
 }
 
-// Son class inheriting from Father
+
 class Son extends Father {
     int sonAge;
 
     public Son(int fatherAge, int sonAge) throws WrongAgeException {
-        super(fatherAge); // Call Father's constructor
+        super(fatherAge); 
         if (sonAge < 0) {
             throw new WrongAgeException("Son's age cannot be less than 0");
         }
@@ -35,9 +35,8 @@ class Son extends Father {
 public class Main {
     public static void main(String[] args) {
         try {
-            Father father = new Father(40); // Valid age
-            Son son = new Son(40, 20);      // Valid father and son ages
-
+            Father father = new Father(40); 
+            Son son = new Son(40, 20);      
             System.out.println("Father's age: " + father.age);
             System.out.println("Son's age: " + son.sonAge);
         } catch (WrongAgeException e) {
